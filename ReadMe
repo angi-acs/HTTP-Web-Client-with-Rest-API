@@ -1,0 +1,30 @@
+Corina-Angi Balanescu
+321 CD
+
+Register - Daca niciun utilizator nu este logat, se poate crea un nou cont (pe care l-am formatat
+pentru a-l trimite catre server cu ajutorul bibliotecii parson). Daca se creeaza se afiseaza un
+mesaj sugestiv, daca nu tratez 2 erori: username-ul este deja folosit de catre altcineva sau se
+proceseaza prea multe cereri in acel moment. Crearea unui cont NU face automat si login.
+
+Login - Trimit acreditarile catre server in format JSON si extrag cookie-ul. Un utilizator
+ramane logat pana la delogare sau pana la repornirea programului.
+
+Enter_library - Daca un utilizator este logat, acesta poate intra in biblioteca si primeste un
+token de access care se va pierde la delogare.
+
+Get_books - Client logat + intrat in biblioteca, extrag toate cartile din raspunsul primit de la
+server.
+
+Get_book - Verifica intai ca user-ul sa aiba acces la biblioteca. In caz afirmativ, cere id-ul
+cartii. Daca id-ul nu exista, fie ca este un int pe care nu il gaseste sau id-ul introdus nu este
+de timp int, va afisa aceeasi eroare.
+
+Add_book - Aceleasi verificari ca cele mentionate anterior, apoi cere campurile necesare pentru o
+carte (nu exista posibilitatea de a nu le introduce pe toate) si le trimit catre server in format
+JSON.
+
+Delete_book - Analog Get_book. 
+
+Logout - Ii trimite servurului faptul ca s-a delogat si se sterg token-ul de acces si cookie-ul.
+
+Exit - Inchide promptul de comenzi.
